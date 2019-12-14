@@ -30,13 +30,32 @@ Edit this document to include your answers after each question. Make sure to lea
 
 1. Describe the biggest difference between `.forEach` & `.map`.
 
+.map allocates memory and stores return values. .forEach throws away return values and always returns undefined.
+.forEach will allow a callback function to mutate the current array. .map will instead return a new array.
+So, .map should be used when you want to make a new array that does not affect the original array, and .forEach should be used when you just want to map over an array.
+
 2. What is the difference between a function and a method?
+
+A function is a block of code designed to perform a particular task/action whereas a method is a function stored as an object property (associated with).
 
 3. What is closure?
 
+MDN definition: A closure is the combination of a function bundled together (enclosed) with references to its surrounding state (the lexical environment). In other words, a closure gives you access to an outer function’s scope from an inner function. In JavaScript, closures are created every time a function is created, at function creation time.
+
 4. Describe the four rules of the 'this' keyword.
 
+Principle 1: Window/Global Object Binding --> When in the global scope, the value of “this” will be the window/console Object;
+Principle 2: Implicit Binding --> Whenever a preceding dot calls a function, the object before the dot is this.
+Principle 3: Explicit binding --> In this case, you can force a function call to use a particular object for this binding, without putting a property function reference on the object. so we explicitly say to a function what object it should use for this — using functions such as call, apply and bind.
+Principle 4: New binding --> The last rule exists for this binding.The function that is called with new operator when the code new name(…) is executed, the following things happen:
+a) An empty object is created and referenced by this variable, inheriting the prototype of the function.
+b) Properties and methods are added to the object referenced by this.
+c) The newly created object referenced by this is returned at the end implicitly (if no other object was returned explicitly).
+
 5. Why do we need super() in an extended class?
+
+In a child class, we use super() to call its parent’s constructor and super.<methodName> to access its parent’s methods.
+In other words, the super keyword in JavaScript is used in order to call the methods of the parent class. By itself, super() is used within a constructor function to call the parent constructor function.
 
 ## Project Set up
 
